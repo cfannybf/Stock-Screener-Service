@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Screener
 {
-    public class Class1
+    public interface IFilter
     {
+        Company[] Filter(Company[] companies);
     }
 }

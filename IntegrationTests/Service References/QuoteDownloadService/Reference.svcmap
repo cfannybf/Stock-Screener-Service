@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="df028a2f-5d5c-44f0-8ccc-484116ff6589" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/QuoteDownloadService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="QuoteDownloadService.xsd" MetadataType="Schema" ID="fd41bb46-76b5-4923-a9f7-aadded485937" SourceId="1" SourceUrl="http://localhost:8080/QuoteDownloadService.svc?xsd=xsd1" />
+    <MetadataFile FileName="QuoteDownloadService.wsdl" MetadataType="Wsdl" ID="d1dd528b-d872-40ea-990c-e5b8aaf85c1a" SourceId="1" SourceUrl="http://localhost:8080/QuoteDownloadService.svc?wsdl" />
+    <MetadataFile FileName="QuoteDownloadService1.xsd" MetadataType="Schema" ID="8e23f293-8ef1-43e2-a12c-467de104a5ac" SourceId="1" SourceUrl="http://localhost:8080/QuoteDownloadService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
