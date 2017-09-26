@@ -10,9 +10,9 @@ namespace QuoteService
 {
     public class QuoteDownloader : IQuoteDownloader
     {
-        private const string StooqUrl = "https://stooq.pl/q/d/l/?s={0}&i=d";
+        private const string StooqUrl = "https://stooq.pl/q/d/l/?s={0}&d1=20151211&d2=20170926&i=d";
         private const string MainPageStooqUrl = "https://stooq.pl/q/d/?s={0}";
-        private const string tempFile = "quote.temp";
+        private const string tempFile = "C:\\Users\\Cfanny\\Documents\\Visual Studio 2015\\Projects\\Screener\\quote.temp";
         private const string FindNameToken = "Dane historyczne:";
 
         public CompanyDto GetQuote(string ticker)
