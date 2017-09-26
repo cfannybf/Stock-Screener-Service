@@ -66,11 +66,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Service References\QuoteDownloadService\IntegrationTests.QuoteDownloadService.CompanyDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\QuoteDownloadService\QuoteDownloadService.wsdl" />
     <None Include="Service References\QuoteDownloadService\QuoteDownloadService.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\QuoteDownloadService\QuoteDownloadService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QuoteDownloadService\QuoteDownloadService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QuoteDownloadService\QuoteDownloadService21.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

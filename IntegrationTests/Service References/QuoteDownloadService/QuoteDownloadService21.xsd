@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ScreenerDto" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ScreenerDto" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfCompanyDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CompanyDto" nillable="true" type="tns:CompanyDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompanyDto" nillable="true" type="tns:ArrayOfCompanyDto" />
+  <xs:complexType name="CompanyDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Chart" nillable="true" type="tns:ArrayOfCandleDto" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompanyDto" nillable="true" type="tns:CompanyDto" />
+  <xs:complexType name="ArrayOfCandleDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CandleDto" nillable="true" type="tns:CandleDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCandleDto" nillable="true" type="tns:ArrayOfCandleDto" />
+  <xs:complexType name="CandleDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Close" type="xs:decimal" />
+      <xs:element minOccurs="0" name="High" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Low" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Open" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CandleDto" nillable="true" type="tns:CandleDto" />
+</xs:schema>

@@ -22,9 +22,11 @@
     <MetadataSource Address="http://localhost:8080/QuoteDownloadService.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="QuoteDownloadService.xsd" MetadataType="Schema" ID="fd41bb46-76b5-4923-a9f7-aadded485937" SourceId="1" SourceUrl="http://localhost:8080/QuoteDownloadService.svc?xsd=xsd1" />
-    <MetadataFile FileName="QuoteDownloadService.wsdl" MetadataType="Wsdl" ID="d1dd528b-d872-40ea-990c-e5b8aaf85c1a" SourceId="1" SourceUrl="http://localhost:8080/QuoteDownloadService.svc?wsdl" />
     <MetadataFile FileName="QuoteDownloadService1.xsd" MetadataType="Schema" ID="8e23f293-8ef1-43e2-a12c-467de104a5ac" SourceId="1" SourceUrl="http://localhost:8080/QuoteDownloadService.svc?xsd=xsd0" />
+    <MetadataFile FileName="QuoteDownloadService.xsd" MetadataType="Schema" ID="fd41bb46-76b5-4923-a9f7-aadded485937" SourceId="1" SourceUrl="http://localhost:8080/QuoteDownloadService.svc?xsd=xsd1" />
+    <MetadataFile FileName="QuoteDownloadService2.xsd" MetadataType="Schema" ID="1aa82ce4-c5ec-428c-a3c8-1fec57ad02b8" SourceId="1" SourceUrl="http://localhost:8080/QuoteDownloadService.svc?xsd=xsd2" />
+    <MetadataFile FileName="QuoteDownloadService.wsdl" MetadataType="Wsdl" ID="d1dd528b-d872-40ea-990c-e5b8aaf85c1a" SourceId="1" SourceUrl="http://localhost:8080/QuoteDownloadService.svc?wsdl" />
+    <MetadataFile FileName="QuoteDownloadService21.xsd" MetadataType="Schema" ID="ae3c7c27-36dc-4543-ba35-a8977b4a6db1" SourceId="1" SourceUrl="http://localhost:8080/QuoteDownloadService.svc?xsd=xsd3" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

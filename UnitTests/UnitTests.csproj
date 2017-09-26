@@ -55,13 +55,25 @@
     <Compile Include="DonchianFilterTest.cs" />
     <Compile Include="IndicatorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuoteDownloaderTest.cs" />
     <Compile Include="SmaTrendFilter.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\QuoteService\QuoteService.csproj">
+      <Project>{b428f874-69bd-4a73-8cf6-b999f99d4726}</Project>
+      <Name>QuoteService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ScreenerDto\ScreenerDto.csproj">
+      <Project>{02f0393b-096e-4d5c-baa9-3dddb012c279}</Project>
+      <Name>ScreenerDto</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Screener\Screener.csproj">
       <Project>{fea4bb68-f9b6-4670-8f1b-3e2c807b608f}</Project>
       <Name>Screener</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

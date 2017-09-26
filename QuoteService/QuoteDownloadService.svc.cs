@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using ScreenerDto;
 
 namespace QuoteService
 {
@@ -15,6 +16,14 @@ namespace QuoteService
         public string Echo(string message)
         {
             return message;
+        }
+
+        public CompanyDto[] GetCompanies(string[] tickers)
+        {
+            var downloader = new QuoteDownloader();
+            var result = tickers.Select(x => downloader.GetQuote(x)).ToArray();
+
+            return result;
         }
     }
 }

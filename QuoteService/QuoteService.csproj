@@ -95,6 +95,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IQuoteDownloader.cs" />
+    <Compile Include="QuoteDownloader.cs" />
     <Compile Include="QuoteDownloadService.svc.cs">
       <DependentUpon>QuoteDownloadService.svc</DependentUpon>
     </Compile>
@@ -115,6 +117,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ScreenerDto\ScreenerDto.csproj">
+      <Project>{02f0393b-096e-4d5c-baa9-3dddb012c279}</Project>
+      <Name>ScreenerDto</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
