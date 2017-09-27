@@ -44,6 +44,7 @@
     <Compile Include="Company.cs" />
     <Compile Include="DonchianChannell.cs" />
     <Compile Include="Filters\DonchianChannelFilter.cs" />
+    <Compile Include="Filters\LifetimeFilter.cs" />
     <Compile Include="Filters\SmaOverAnotherSmaFilter.cs" />
     <Compile Include="Filters\TurtleFilter.cs" />
     <Compile Include="IFilter.cs" />

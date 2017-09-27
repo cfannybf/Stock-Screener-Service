@@ -17,6 +17,6 @@ namespace QuoteService
         string Echo(string message);
 
         [OperationContract]
-        CompanyDto[] GetCompanies(string[] tickers);
+        string[] FilterCompanies(string[] tickers);
     }
 }

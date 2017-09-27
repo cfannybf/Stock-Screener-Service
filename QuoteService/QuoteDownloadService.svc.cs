@@ -6,6 +6,8 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using ScreenerDto;
+using Screener;
+using Screener.Filters;
 
 namespace QuoteService
 {
@@ -18,12 +20,36 @@ namespace QuoteService
             return message;
         }
 
-        public CompanyDto[] GetCompanies(string[] tickers)
+        public string[] FilterCompanies(string[] tickers)
         {
+            var companiesDto = new List<CompanyDto>();
             var downloader = new QuoteDownloader();
-            var result = tickers.Select(x => downloader.GetQuote(x)).ToArray();
 
-            return result;
+            foreach (var ticker in tickers)
+            {
+                var company = downloader.GetQuote(ticker);
+                companiesDto.Add(company);
+            }
+
+            var companies = companiesDto.Select(x => new Company()
+            {
+                Name = x.Name,
+                Chart = x.Chart.Select(y => new Candle()
+                {
+                    Open = y.Open,
+                    High = y.High,
+                    Low = y.Low,
+                    Close = y.Close,
+                    Volume = y.Volume
+                }).ToArray()
+            }).ToArray();
+
+            //TODO: Add params
+            companies = new LifetimeFilter(110).Filter(companies);
+            companies = new SmaOverAnotherSmaFilter(50, 100).Filter(companies);
+            companies = new DonchianChannelFilter(20, 1, 0.05M).Filter(companies);
+
+            return companies.Select(x => x.Name).ToArray();
         }
     }
 }

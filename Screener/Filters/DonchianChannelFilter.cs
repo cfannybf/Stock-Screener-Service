@@ -28,7 +28,8 @@ namespace Screener.Filters
                 {
                     var donchian = DonchianChannell.High(period, company.Chart);
                     var last = company.Chart.Last().High;
-                    if (last >= donchian)
+                    var percentage = (donchian - last) / donchian;
+                    if (last >= donchian || (percentage > 0 && percentage < this.percentage))
                     {
                         result.Add(company);
                     }
@@ -37,7 +38,8 @@ namespace Screener.Filters
                 {
                     var donchian = DonchianChannell.Low(period, company.Chart);
                     var last = company.Chart.Last().Low;
-                    if (last <= donchian)
+                    var percentage = (last - donchian) / last;
+                    if (last <= donchian || (percentage > 0 && percentage < this.percentage))
                     {
                         result.Add(company);
                     }

@@ -53,6 +53,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="DonchianFilterTest.cs" />
+    <Compile Include="GeneralFilterTest.cs" />
     <Compile Include="IndicatorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuoteDownloaderTest.cs" />
