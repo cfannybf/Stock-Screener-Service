@@ -5,7 +5,6 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using ScreenerDto;
 using Screener;
 using Screener.Filters;
 
@@ -28,7 +27,7 @@ namespace QuoteService
             }
 
             var unprocessed = new List<string>();
-            var companiesDto = new List<CompanyDto>();
+            var companies = new List<Company>();
             var downloader = new QuoteDownloader();
 
             foreach (var ticker in tickers)
@@ -36,7 +35,7 @@ namespace QuoteService
                 try
                 {
                     var company = downloader.GetQuote(ticker);
-                    companiesDto.Add(company);
+                    companies.Add(company);
                 }
                 catch (Exception)
                 {
@@ -44,25 +43,13 @@ namespace QuoteService
                 }
             }
 
-            var companies = companiesDto.Select(x => new Company()
-            {
-                Name = x.Name,
-                Chart = x.Chart.Select(y => new Candle()
-                {
-                    Open = y.Open,
-                    High = y.High,
-                    Low = y.Low,
-                    Close = y.Close,
-                    Volume = y.Volume
-                }).ToArray()
-            }).ToArray();
-
+            var companiesArr = companies.ToArray();
             //TODO: Add params
-            companies = new LifetimeFilter(110).Filter(companies);
-            companies = new SmaOverAnotherSmaFilter(50, 100).Filter(companies);
-            companies = new DonchianChannelFilter(20, 1, percentage.Value).Filter(companies);
+            companiesArr = new LifetimeFilter(110).Filter(companiesArr);
+            companiesArr = new SmaOverAnotherSmaFilter(50, 100).Filter(companiesArr);
+            companiesArr = new DonchianChannelFilter(20, 1, percentage.Value).Filter(companiesArr);
 
-            var retval = companies.Select(x => x.Name).ToList();
+            var retval = companiesArr.Select(x => x.Name).ToList();
 
             if (unprocessed.Count > 0)
             {

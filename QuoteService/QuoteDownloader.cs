@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using ScreenerDto;
 using System.Net;
 using System.IO;
+using Screener;
 
 namespace QuoteService
 {
@@ -15,7 +15,7 @@ namespace QuoteService
         private const string tempFile = "C:\\Users\\Cfanny\\Documents\\Visual Studio 2015\\Projects\\Screener\\quote.temp";
         private const string FindNameToken = "Dane historyczne:";
 
-        public CompanyDto GetQuote(string ticker)
+        public Company GetQuote(string ticker)
         {
             try
             {
@@ -59,9 +59,9 @@ namespace QuoteService
             }
         }
 
-        private CandleDto[] loadCompanyChart()
+        private Candle[] loadCompanyChart()
         {
-            var reslist = new List<CandleDto>();
+            var reslist = new List<Candle>();
 
             using (var sr = new StreamReader(tempFile))
             {
@@ -75,7 +75,7 @@ namespace QuoteService
 
                     var split = line.Split(';');
 
-                    var candle = new CandleDto()
+                    var candle = new Candle()
                     {
                         Open = decimal.Parse(split[1]),
                         High = decimal.Parse(split[2]),
@@ -91,12 +91,12 @@ namespace QuoteService
             return reslist.ToArray().Reverse().ToArray();
         }
 
-        private CompanyDto getCompanyFromCsv(string ticker)
+        private Company getCompanyFromCsv(string ticker)
         {
             var name = getName(ticker).Trim();
             var chart = loadCompanyChart();
 
-            return new CompanyDto()
+            return new Company()
             {
                 Name = name,
                 Chart = chart

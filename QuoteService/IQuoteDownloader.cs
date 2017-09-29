@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ScreenerDto;
+using Screener;
 
 namespace QuoteService
 {
     public interface IQuoteDownloader
     {
-        CompanyDto GetQuote(string ticker);
+        Company GetQuote(string ticker);
     }
 }
