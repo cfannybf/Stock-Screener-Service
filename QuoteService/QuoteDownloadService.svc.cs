@@ -20,15 +20,28 @@ namespace QuoteService
             return message;
         }
 
-        public string[] FilterCompanies(string[] tickers)
+        public string[] FilterCompanies(string[] tickers, decimal? percentage)
         {
+            if (percentage == null)
+            {
+                percentage = 0;
+            }
+
+            var unprocessed = new List<string>();
             var companiesDto = new List<CompanyDto>();
             var downloader = new QuoteDownloader();
 
             foreach (var ticker in tickers)
             {
-                var company = downloader.GetQuote(ticker);
-                companiesDto.Add(company);
+                try
+                {
+                    var company = downloader.GetQuote(ticker);
+                    companiesDto.Add(company);
+                }
+                catch (Exception)
+                {
+                    unprocessed.Add(ticker);
+                }
             }
 
             var companies = companiesDto.Select(x => new Company()
@@ -47,9 +60,16 @@ namespace QuoteService
             //TODO: Add params
             companies = new LifetimeFilter(110).Filter(companies);
             companies = new SmaOverAnotherSmaFilter(50, 100).Filter(companies);
-            companies = new DonchianChannelFilter(20, 1, 0.05M).Filter(companies);
+            companies = new DonchianChannelFilter(20, 1, percentage.Value).Filter(companies);
 
-            return companies.Select(x => x.Name).ToArray();
+            var retval = companies.Select(x => x.Name).ToList();
+
+            if (unprocessed.Count > 0)
+            {
+                retval.Add("Couldn't process: " + string.Join(";", unprocessed.ToArray()));
+            }
+
+            return retval.ToArray();
         }
     }
 }

@@ -17,6 +17,6 @@ namespace QuoteService
         string Echo(string message);
 
         [OperationContract]
-        string[] FilterCompanies(string[] tickers);
+        string[] FilterCompanies(string[] tickers, decimal? percentage);
     }
 }

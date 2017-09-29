@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="b8a4584d-e248-45a1-9755-0fc3c00086fe" activeEnvironment="Default" name="QuoteDownloadService" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="45828315-61b2-4335-ab4b-97462dcfb100" wsaVersion="NONE" name="BasicHttpBinding_IQuoteDownloadService" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IQuoteDownloadService" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/QuoteDownloadService.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/QuoteDownloadService.svc?wsdl"><con:part><con:url>http://localhost:8080/QuoteDownloadService.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="QuoteDownloadService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+<con:soapui-project id="18b7bc09-cef9-42fc-a256-9768fe078e7a" activeEnvironment="Default" name="l" resourceRoot="" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="13c8699b-0b75-4b2a-b680-c027b61e6874" wsaVersion="NONE" name="BasicHttpBinding_IQuoteDownloadService" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IQuoteDownloadService" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/QuoteDownloadService.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/QuoteDownloadService.svc?wsdl"><con:part><con:url>http://localhost:8080/QuoteDownloadService.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="QuoteDownloadService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8080/QuoteDownloadService.svc?xsd=xsd0" namespace="http://tempuri.org/"/>
@@ -75,6 +75,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="tickers" nillable="true" type="q1:ArrayOfstring" xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+        <xs:element minOccurs="0" name="percentage" nillable="true" type="xs:decimal"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -132,7 +133,7 @@
   <xs:attribute name="FactoryType" type="xs:QName"/>
   <xs:attribute name="Id" type="xs:ID"/>
   <xs:attribute name="Ref" type="xs:IDREF"/>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/QuoteDownloadService.svc</con:endpoint></con:endpoints><con:operation id="8bc983dc-a7a8-4682-9494-8ccc615ccb97" isOneWay="false" action="http://tempuri.org/IQuoteDownloadService/Echo" name="Echo" bindingOperationName="Echo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d0e3c906-e358-4603-b59a-5289d5d0fab6" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/QuoteDownloadService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/QuoteDownloadService.svc</con:endpoint></con:endpoints><con:operation id="f4c8c22b-913e-426b-8cea-fb0ab0597042" isOneWay="false" action="http://tempuri.org/IQuoteDownloadService/Echo" name="Echo" bindingOperationName="Echo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="18340741-3cdb-4049-9928-bd2d22f93b0b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/QuoteDownloadService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tem:Echo>\r
@@ -140,14 +141,13 @@
          <tem:message>?</tem:message>\r
       </tem:Echo>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IQuoteDownloadService/Echo"/></con:call></con:operation><con:operation id="1cdc60b5-f951-4ab1-800b-cfd0be3152ee" isOneWay="false" action="http://tempuri.org/IQuoteDownloadService/FilterCompanies" name="FilterCompanies" bindingOperationName="FilterCompanies" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f36b5992-1928-4b74-b85c-c83c72a17383" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/QuoteDownloadService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IQuoteDownloadService/Echo"/></con:call></con:operation><con:operation id="8d7b6519-0282-4d5f-9cad-d5dea00d88b3" isOneWay="false" action="http://tempuri.org/IQuoteDownloadService/FilterCompanies" name="FilterCompanies" bindingOperationName="FilterCompanies" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2d553d1b-1d9a-4d47-bf5f-52bf726bd11e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/QuoteDownloadService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tem:FilterCompanies>\r
          <!--Optional:-->\r
          <tem:tickers>\r
-            <!--Zero or more repetitions:-->\r
-            <arr:string>DNP</arr:string>\r
+            <arr:string>DNP</arr:string>
             <arr:string>KGH</arr:string>
             <arr:string>LWB</arr:string>
             <arr:string>PZU</arr:string>
@@ -169,7 +169,21 @@
             <arr:string>PXM</arr:string>
             <arr:string>OPL</arr:string>
             <arr:string>ATT</arr:string>
+            <arr:string>TPE</arr:string>
+            <arr:string>ENG</arr:string>
+            <arr:string>ING</arr:string>
+            <arr:string>SNS</arr:string>
+            <arr:string>ENA</arr:string>
+            <arr:string>MBK</arr:string>
+            <arr:string>LCC</arr:string>
+            <arr:string>IPX</arr:string>
+            <arr:string>CIE</arr:string>
+            <arr:string>EUR</arr:string>
+            <arr:string>GTN</arr:string>
+            <arr:string>MAB</arr:string>
          </tem:tickers>\r
+         <!--Optional:-->\r
+         <tem:percentage>0.02</tem:percentage>\r
       </tem:FilterCompanies>\r
    </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IQuoteDownloadService/FilterCompanies"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
