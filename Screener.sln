@@ -14,7 +14,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "Integra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoteService", "QuoteService\QuoteService.csproj", "{B428F874-69BD-4A73-8CF6-B999F99D4726}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenerDto", "ScreenerDto\ScreenerDto.csproj", "{02F0393B-096E-4D5C-BAA9-3DDDB012C279}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI", "WebUI\WebUI.csproj", "{E808289F-163B-4EF7-B18D-2C99B22A30BF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B428F874-69BD-4A73-8CF6-B999F99D4726} = {B428F874-69BD-4A73-8CF6-B999F99D4726}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,10 +41,10 @@ Global
 		{B428F874-69BD-4A73-8CF6-B999F99D4726}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B428F874-69BD-4A73-8CF6-B999F99D4726}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B428F874-69BD-4A73-8CF6-B999F99D4726}.Release|Any CPU.Build.0 = Release|Any CPU
-		{02F0393B-096E-4D5C-BAA9-3DDDB012C279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{02F0393B-096E-4D5C-BAA9-3DDDB012C279}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02F0393B-096E-4D5C-BAA9-3DDDB012C279}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02F0393B-096E-4D5C-BAA9-3DDDB012C279}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E808289F-163B-4EF7-B18D-2C99B22A30BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E808289F-163B-4EF7-B18D-2C99B22A30BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E808289F-163B-4EF7-B18D-2C99B22A30BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E808289F-163B-4EF7-B18D-2C99B22A30BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

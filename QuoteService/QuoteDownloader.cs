@@ -5,6 +5,7 @@ using System.Web;
 using System.Net;
 using System.IO;
 using Screener;
+using System.Configuration;
 
 namespace QuoteService
 {
@@ -12,8 +13,14 @@ namespace QuoteService
     {
         private const string StooqUrl = "http://finance.google.com/finance/historical?q=WSE:{0}&output=csv";
         private const string MainPageStooqUrl = "https://stooq.pl/q/d/?s={0}";
-        private const string tempFile = "C:\\Users\\Cfanny\\Documents\\Visual Studio 2015\\Projects\\Screener\\quote.temp";
         private const string FindNameToken = "Dane historyczne:";
+
+        private string tempFile;
+
+        public QuoteDownloader()
+        {
+            tempFile = ConfigurationManager.AppSettings["tempFileLocation"];
+        }
 
         public Company GetQuote(string ticker)
         {

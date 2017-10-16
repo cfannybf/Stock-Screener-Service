@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="16038a40-5467-4c07-8188-b1f9191ca279" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/QuoteDownloadService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="QuoteDownloadService.xsd" MetadataType="Schema" ID="647d5e93-1105-46bf-895b-c8b9934ba181" SourceId="1" SourceUrl="http://localhost:8080/QuoteDownloadService.svc?xsd=xsd1" />
+    <MetadataFile FileName="QuoteDownloadService.wsdl" MetadataType="Wsdl" ID="c3b00c1c-f80e-4215-a520-59d63be7929d" SourceId="1" SourceUrl="http://localhost:8080/QuoteDownloadService.svc?wsdl" />
+    <MetadataFile FileName="QuoteDownloadService1.xsd" MetadataType="Schema" ID="df5b597b-f691-4602-b4d6-6dece21c50fd" SourceId="1" SourceUrl="http://localhost:8080/QuoteDownloadService.svc?xsd=xsd2" />
+    <MetadataFile FileName="QuoteDownloadService.disco" MetadataType="Disco" ID="7d1ff695-2d6d-4082-a43e-a3e325f6ea91" SourceId="1" SourceUrl="http://localhost:8080/QuoteDownloadService.svc?disco" />
+    <MetadataFile FileName="QuoteDownloadService2.xsd" MetadataType="Schema" ID="66d3e754-8f37-45d2-90cc-66f9d4b55690" SourceId="1" SourceUrl="http://localhost:8080/QuoteDownloadService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
