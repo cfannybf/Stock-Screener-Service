@@ -31,6 +31,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,7 +50,9 @@
     <Compile Include="Filters\SmaOverAnotherSmaFilter.cs" />
     <Compile Include="Filters\TurtleFilter.cs" />
     <Compile Include="IFilter.cs" />
+    <Compile Include="IQuoteDownloader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuoteDownloader.cs" />
     <Compile Include="SMA.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

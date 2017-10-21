@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Screener;
 
-namespace QuoteService
+namespace Screener
 {
     public interface IQuoteDownloader
     {

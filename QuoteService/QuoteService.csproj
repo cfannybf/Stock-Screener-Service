@@ -95,8 +95,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IQuoteDownloader.cs" />
-    <Compile Include="QuoteDownloader.cs" />
     <Compile Include="QuoteDownloadService.svc.cs">
       <DependentUpon>QuoteDownloadService.svc</DependentUpon>
     </Compile>
