@@ -24,15 +24,14 @@ namespace ScreenerGui
     public partial class MainWindow : Window
     {
         private SymbolLoader _symbolLoader;
-        private IQuoteDownloader _downloader;
-        private List<CompanyVM> _companies;
+        private MainWindowVM _mainWindow;
 
         public MainWindow()
         {
             InitializeComponent();
             _symbolLoader = new SymbolLoader();
-            _companies = new List<CompanyVM>();
-            _downloader = new QuoteService.QuoteDownloader();
+            _mainWindow = new MainWindowVM(new QuoteService.QuoteDownloader(), _symbolLoader);
+            _mainWindow.CompaniesUpdatedHandler += OnCompaniesUpdated;
 
             Bind();
         }
@@ -40,48 +39,17 @@ namespace ScreenerGui
         private void Bind()
         {
             symbolsListView.ItemsSource = _symbolLoader.GetSymbols().Select(x => x.Symbol).ToList();
-            companyDataGrid.ItemsSource = _companies;
+            companyDataGrid.ItemsSource = _mainWindow.Companies;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            LoadCompanies();
+            _mainWindow.LoadCompanies(Convert.ToDecimal(percentageTextBox.Text) / 100);
         }
 
-        private void LoadCompanies()
+        private void OnCompaniesUpdated(object sender, EventArgs e)
         {
-            foreach (var symbol in _symbolLoader.GetSymbols())
-            {
-                try
-                {
-                    var company = _downloader.GetQuote(symbol.Symbol);
-                    _companies.Add(new CompanyVM(company));
-                }
-                catch (Exception s)
-                {
-                }
-            }
-
-            _companies = FilterCompanies(Convert.ToDecimal(percentageTextBox.Text) / 100).ToList();
-            companyDataGrid.ItemsSource = _companies;
-        }
-
-        private CompanyVM[] FilterCompanies(decimal? percentage)
-        {
-            if (percentage == null)
-            {
-                percentage = 0;
-            }
-
-            var companiesArr = _companies.Select(x => new Company() { Name = x.Name, Chart = x.Chart }).ToArray();
-            //TODO: Add params
-            companiesArr = new LifetimeFilter(110).Filter(companiesArr);
-            companiesArr = new SmaOverAnotherSmaFilter(50, 100).Filter(companiesArr);
-            companiesArr = new DonchianChannelFilter(20, 1, percentage.Value).Filter(companiesArr);
-
-            var retval = companiesArr.ToList();
-
-            return retval.Select(x => new CompanyVM(x)).ToArray();
+            companyDataGrid.Items.Refresh();
         }
     }
 }

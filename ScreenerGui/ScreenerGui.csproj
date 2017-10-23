@@ -58,6 +58,7 @@
     </ApplicationDefinition>
     <Compile Include="SymbolLoader.cs" />
     <Compile Include="ViewModel\CompanyVM.cs" />
+    <Compile Include="ViewModel\MainWindowVM.cs" />
     <Compile Include="ViewModel\SymbolVM.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
