@@ -1,5 +1,6 @@
 ﻿using Screener;
 using Screener.Filters;
+using ScreenerGui.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,17 +37,27 @@ namespace ScreenerGui.ViewModel
 
         public event EventHandler CompaniesUpdatedHandler;
 
+        public event EventHandler<ProgressChangedEventArgs> ProgressChangedHandler;
+
         public void LoadCompanies(decimal percentage)
         {
+            var count = _symbolLoader.GetSymbols().Count();
+            int index = 0;
+
             foreach (var symbol in _symbolLoader.GetSymbols())
             {
                 try
                 {
+                    index++;
                     var company = _downloader.GetQuote(symbol.Symbol);
                     _companies.Add(new CompanyVM(company));
                 }
                 catch (Exception s)
                 {
+                }
+                finally
+                {
+                    ProgressChangedHandler?.Invoke(this, new ProgressChangedEventArgs() { Progress = (int)((float)index / count * 100.0) });
                 }
             }
 

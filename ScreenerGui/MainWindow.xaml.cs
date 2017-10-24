@@ -1,10 +1,12 @@
 ﻿using Screener;
 using Screener.Filters;
+using ScreenerGui.Events;
 using ScreenerGui.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -26,12 +28,27 @@ namespace ScreenerGui
         private SymbolLoader _symbolLoader;
         private MainWindowVM _mainWindow;
 
+        public event EventHandler<ProgressChangedEventArgs> ProgressChangedHandler;
+        public event EventHandler CompaniesUpdatedHandler;
+
         public MainWindow()
         {
             InitializeComponent();
             _symbolLoader = new SymbolLoader();
             _mainWindow = new MainWindowVM(new QuoteService.QuoteDownloader(), _symbolLoader);
-            _mainWindow.CompaniesUpdatedHandler += OnCompaniesUpdated;
+
+            CompaniesUpdatedHandler += OnCompaniesUpdated;
+            ProgressChangedHandler += OnProgressChanged;
+
+            _mainWindow.CompaniesUpdatedHandler += (s, e) =>
+            {
+                CompaniesUpdatedHandler(s, e);
+            };
+
+            _mainWindow.ProgressChangedHandler += (s, e) =>
+            {
+                ProgressChangedHandler(s, e);
+            };
 
             Bind();
         }
@@ -44,12 +61,35 @@ namespace ScreenerGui
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            _mainWindow.LoadCompanies(Convert.ToDecimal(percentageTextBox.Text) / 100);
+            Thread t = new Thread((d) => _mainWindow.LoadCompanies((decimal)d));
+            t.Start(Convert.ToDecimal(percentageTextBox.Text) / 100);
         }
 
         private void OnCompaniesUpdated(object sender, EventArgs e)
         {
-            companyDataGrid.Items.Refresh();
+            if (!Dispatcher.CheckAccess())
+            {
+                var CompaniesUpdated = CompaniesUpdatedHandler as EventHandler;
+                Dispatcher.Invoke(CompaniesUpdated, new object[] { sender, e });
+            }
+            else
+            {
+                companyDataGrid.Items.Refresh();
+                searchProgressBar.Value = 0;
+            }
+        }
+
+        private void OnProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            if (!Dispatcher.CheckAccess())
+            {
+                var ProgressChanged = ProgressChangedHandler as EventHandler<ProgressChangedEventArgs>;
+                Dispatcher.Invoke(ProgressChanged, new object[] { sender, e });
+            }
+            else
+            {
+                searchProgressBar.Value = e.Progress;
+            }
         }
     }
 }
