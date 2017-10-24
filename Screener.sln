@@ -16,6 +16,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoteService", "QuoteServic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenerGui", "ScreenerGui\ScreenerGui.csproj", "{B0161D97-FC46-416B-835E-E7782A904D81}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenerShell", "ScreenerShell\ScreenerShell.csproj", "{41472500-4B3A-4776-85FB-17AAFCD58465}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{944C52CA-911A-4C41-B50C-1FC130E1B9A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Screener.Infrastructure", "Screener.Infrastructure\Screener.Infrastructure.csproj", "{6B042DD7-A0BA-42DC-A2AC-322891D1A729}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +48,14 @@ Global
 		{B0161D97-FC46-416B-835E-E7782A904D81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0161D97-FC46-416B-835E-E7782A904D81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0161D97-FC46-416B-835E-E7782A904D81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41472500-4B3A-4776-85FB-17AAFCD58465}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41472500-4B3A-4776-85FB-17AAFCD58465}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41472500-4B3A-4776-85FB-17AAFCD58465}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41472500-4B3A-4776-85FB-17AAFCD58465}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B042DD7-A0BA-42DC-A2AC-322891D1A729}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B042DD7-A0BA-42DC-A2AC-322891D1A729}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B042DD7-A0BA-42DC-A2AC-322891D1A729}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B042DD7-A0BA-42DC-A2AC-322891D1A729}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
