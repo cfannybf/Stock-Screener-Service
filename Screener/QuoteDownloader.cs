@@ -12,8 +12,8 @@ namespace QuoteService
     public class QuoteDownloader : IQuoteDownloader
     {
         private const string StooqUrl = "http://finance.google.com/finance/historical?q=WSE:{0}&output=csv";
-        private const string MainPageStooqUrl = "https://stooq.pl/q/d/?s={0}";
-        private const string FindNameToken = "Dane historyczne:";
+        private const string MainPageStooqUrl = "https://stooq.pl/q/?s={0}";
+        private const string FindNameToken = "&nbsp;";
 
         private string tempFile;
 
@@ -58,8 +58,9 @@ namespace QuoteService
             using (StreamReader reader = new StreamReader(stream))
             {
                 var html = reader.ReadToEnd();
-                var start = html.IndexOf(FindNameToken);
-                start += FindNameToken.Length + 1;
+                var findTicker = html.IndexOf(string.Format("({0})", ticker));
+                var start = html.LastIndexOf(FindNameToken, findTicker);
+                start += FindNameToken.Length;
 
                 var end = html.IndexOf("(", start);
                 return html.Substring(start, end - start);
